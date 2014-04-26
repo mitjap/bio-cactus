@@ -1,0 +1,12 @@
+div.page-header
+	h1 Register new costumer
+	
+div
+	form(role="form")
+		div.form-group
+			label(for="name") Company name:
+			input.form-control#name(ng-model="costumer.name")
+		div.form-group
+			label(for="sg-serial") SG-Lock serial number:
+			input.form-control#sg-serial(ng-model="costumer.sg_serial")
+		button.btn.btn-default(ng-click="register()") Submit

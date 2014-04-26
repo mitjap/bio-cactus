@@ -1,0 +1,15 @@
+div.page-header
+	h1 Costumer List
+
+div.row
+	div.col-md-4
+		div.list-group(ng-repeat='costumer in costumers')
+			a.list-group-item.active
+				h4.list-group-item-heading {{ costumer.name }}
+				p.list-group-item-text {{ costumer.sg_serial }}
+			a.list-group-item(ng-repeat='client in costumer.clients', ng-click="selectClient(client)", ng-class="{ 'list-group-item-info': client == selected_client }")
+				span.badge.pull-right {{ client.logs.length }}
+				h4.list-group-item-heading {{ client.host_name }}
+				
+	div.col-md-8
+		div(ng-include="'partials/client_details'")

@@ -1,0 +1,11 @@
+div.panel.panel-default
+	div.panel-heading 
+		h3 {{ name }}
+
+div.panel-body
+	div
+		p Map
+	table.table-bordered.map
+		tr(ng-repeat="row in map")
+			td.active(ng-repeat="col in row track by $index")
+				p {{ col }}
